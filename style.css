@@ -1,0 +1,207 @@
+/* Body Reset */
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff0f5;
+  font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Shop Container */
+.shop-name {
+  height: 100vh;
+  background-color: #fff0f5;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Teddy Bear Image Slide + Bounce */
+.shop-name-text {
+  position: absolute;
+  top: -400px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 390px;
+  background-image: url('bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: slideBounce 2.2s ease forwards;
+}
+
+@keyframes slideBounce {
+  0% { top: -400px; }
+  70% { top: 120px; }
+  85% { top: 100px; }
+  100% { top: 110px; }
+}
+
+/* Cuddle Cub Heading */
+.shop-heading {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #d96f6f;
+  opacity: 0;
+  animation: fadeIn 0.7s ease-in forwards 0.85s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Shop Now Button */
+.shop-button {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 30px;
+  background: #ff91a4;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(255, 145, 164, 0.5);
+  transition: all 0.3s ease;
+  animation: fadeIn 2s ease-in forwards 2s;
+  margin-top: 200px;
+}
+
+.shop-button:hover {
+  background: #ff6f91;
+  box-shadow: 0 0 25px rgba(255, 111, 145, 0.8);
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 0;
+  background: #fddde6;
+  color: #a44b5b;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1rem;
+  border-top: 2px dashed #ffc0cb;
+}
+
+/* Contact Navbar */
+.contact-navbar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: #ffe6f0;
+  padding: 10px 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #a9445b;
+  border-bottom: 2px dashed #ffc0cb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-item:hover {
+  color: #d63384; /* deeper pink */
+  transform: scale(1.1);
+  text-shadow: 0 0 8px #d63384aa;
+}
+
+/* Animations */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.contact-navbar {
+  animation: slideDown 1s ease-out forwards;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+
+@media (max-width: 768px) {
+  /* Reduce heading size */
+  .shop-heading {
+    font-size: 2.2rem;
+    top: 20px;
+  }
+
+  /* Shrink teddy image and adjust top */
+  .shop-name-text {
+    width: 180px;
+    height: 280px;
+    top: 90px !important;  /* override animation end position */
+  }
+
+  /* Adjust Shop Now button */
+  .shop-button {
+    font-size: 1rem;
+    padding: 10px 25px;
+    top: 200px;
+    margin-top: 100px;
+  }
+
+  /* Contact navbar spacing */
+  .contact-navbar {
+    gap: 15px;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce heading */
+  .shop-heading {
+    font-size: 1.6rem;
+    top: 15px;
+  }
+
+  /* Teddy image smaller and lower */
+  .shop-name-text {
+    width: 140px;
+    height: 220px;
+    top: 80px !important;
+  }
+
+  /* Shop Now button smaller */
+  .shop-button {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    top: 170px;
+    margin-top: 80px;
+  }
+
+  /* Contact navbar smaller gap and stacked vertically */
+  .contact-navbar {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
